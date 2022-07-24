@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "A touch of R in robotics",
+    "section": "",
+    "text": "Hujambo and welcome to the accompanying guide for our rstudio::conf(2022) talk: A Touch of R in Robotics.\nIn these series of notebooks, we try as much as possible to provide detailed explanations of the methodologies used along with the corresponding code.\nWe hope you enjoy it as much as we did 🤖.\n\n\n\n\n\n\nNote\n\n\n\nHujambo is a Swahili word used in the context of Hello or How are you?. One typically replies with Sijambo meaning I am fine\n\n\n \n\ncombining R and Arduino to perform a simple pick and place action \n\n\n\nVideo"
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "See Knuth (1984) for additional discussion of literate programming.\n\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "2  Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever."
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97."
+  }
+]

@@ -1,0 +1,18 @@
+# Preface {.unnumbered}
+
+Hujambo and welcome to the accompanying guide for our [rstudio::conf(2022)](https://www.rstudio.com/conference/) talk: *`A Touch of R in Robotics`*.
+
+In these series of notebooks, we try as much as possible to provide detailed explanations of the methodologies used along with the corresponding code.
+
+We hope you enjoy it as much as we did 🤖.
+
+::: callout-note
+`Hujambo` is a *Swahili* word used in the context of `Hello` or `How are you?`.
+One typically replies with `Sijambo` meaning `I am fine`
+:::
+
+<br> <br>
+
+<center><font size="3">combining R and Arduino to perform a simple pick and place action </font></center>
+
+![](images/traj.mp4){fig-align="center" width="500"}

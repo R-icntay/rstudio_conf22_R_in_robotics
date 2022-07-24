@@ -1,0 +1,23 @@
+project:
+  type: book
+
+book:
+  title: "A touch of R in robotics"
+  author: "Eric and Ian"
+  cover-image: images/cover.png
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+
+
