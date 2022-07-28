@@ -14,6 +14,6 @@ You can find the project's repo at:
 <https://github.com/R-icntay/rstudio_conf22_R_in_robotics>
 :::
 
-Happy learning,,
+Happy learning,
 
 [Eric](https://twitter.com/ericntay) and [Ian](https://twitter.com/Entity_4004).

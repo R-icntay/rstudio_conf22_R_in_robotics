@@ -109,7 +109,7 @@
     "href": "summary.html",
     "title": "5  Summary",
     "section": "",
-    "text": "The instructions on the microcontroller (described in chapter 4) that send electrical pulses to rotate our motors can be found in the file robot_arm_control.ino.\nAnd that’s it! There goes a touch of R in robotics.\nPlease do feel free to reach out in case of any questions, feedback and suggestions.\n\n\n\n\n\n\nNote\n\n\n\nYou can find the project’s repo at:\nhttps://github.com/R-icntay/rstudio_conf22_R_in_robotics\n\n\nHappy learning,,\nEric and Ian."
+    "text": "The instructions on the microcontroller (described in chapter 4) that send electrical pulses to rotate our motors can be found in the file robot_arm_control.ino.\nAnd that’s it! There goes a touch of R in robotics.\nPlease do feel free to reach out in case of any questions, feedback and suggestions.\n\n\n\n\n\n\nNote\n\n\n\nYou can find the project’s repo at:\nhttps://github.com/R-icntay/rstudio_conf22_R_in_robotics\n\n\nHappy learning,\nEric and Ian."
   },
   {
     "objectID": "references.html",
