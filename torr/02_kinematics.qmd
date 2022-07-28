@@ -303,6 +303,9 @@ ikin(xyz_coordinates = c(-11, 10, -3))
 From the above examples, the xyz coordinate values obtained from forward kinematics operation produced the same input angles when passed through the inverse kinematics equations.
 This will be essential for future operations such as validating whether motor angle rotations result in a desired xyz position of the end effector.
 
+And with that, this section is done!
+Please do feel free to reach out in case of any questions, feedback and suggestions.
+
 Happy LeaRning,
 
 [Eric](https://twitter.com/ericntay).
