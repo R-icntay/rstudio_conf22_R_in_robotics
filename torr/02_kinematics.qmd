@@ -1,5 +1,5 @@
 ---
-title: "rstudio::conf 2022: A touch of R in Robotics"
+title: "Manipulator kinematics"
 author: "Eric Wanjau and Ian Muchiri"
 toc: true
 number-sections: true
@@ -15,6 +15,7 @@ format:
       - left=30mm
   docx: default
 execute: 
+  eval: false
   warning: false
   message: false
 bibliography: references.bib
