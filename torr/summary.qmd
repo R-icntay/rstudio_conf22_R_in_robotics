@@ -11,7 +11,7 @@ Please do feel free to reach out in case of any questions, feedback and suggesti
 ::: callout-note
 You can find the project's repo at:
 
-https://github.com/R-icntay/rstudio_conf22_R\_in_robotics
+<https://github.com/R-icntay/rstudio_conf22_R_in_robotics>
 :::
 
 Happy learning,
