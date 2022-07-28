@@ -98,6 +98,10 @@ Only centroid locations are of importance. So we narrow down to that:
 centroids <- img_dfx %>% 
   ungroup() %>% 
   distinct(pos, centroidx, centroidy)
+
+# View centroids on the virtual board
+centroids %>% 
+  slice_head(n = 10)
 ```
 
 ## Mapping coordinates to xy
@@ -130,6 +134,9 @@ centroids = centroids %>%
       pos = paste(pl, pn, sep = "")) %>% 
     select(-c(pl, pn))
 
+# View centroids coordinates
+centroids %>% 
+  slice_head(n = 10)
 ```
 
 Now let's visualize our handy work:

@@ -9,6 +9,9 @@ book:
     - index.qmd
     - 01_speech_2_text_via_azure.qmd
     - 02_kinematics.qmd
+    - 03_board_mapping.qmd
+    - 04_aRduino.qmd
+    - summary.qmd
     - references.qmd
 
 bibliography: references.bib
