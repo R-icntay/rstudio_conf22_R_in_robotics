@@ -26,7 +26,7 @@ library(tidyverse)
 library(here)
 ```
 
-This Notebook contains proposed code and prose for our talk at [rstudio::conf 2022](https://www.rstudio.com/conference/) and tries to answer how the manipulator will arrive at the desired location.
+This Notebook illustrates how the manipulator will arrive at the desired location as instructed by the speech input
 
 ## Forward and Inverse Kinematics
 
