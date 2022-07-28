@@ -35,7 +35,7 @@ We begin with the input which we plan to transcribe.
 In order to record audio,we need to install and load the audio package
 
 ```{r}
-#| eval:false
+#| eval: false
 #install the audio package
 install.packages("audio")
 
