@@ -26,7 +26,7 @@ library(tidyverse)
 library(here)
 ```
 
-This Notebook illustrates how the manipulator will arrive at the desired location as instructed by the speech input
+This Notebook illustrates how the manipulator will arrive at the desired location as instructed by the speech input.
 
 ## Forward and Inverse Kinematics
 
