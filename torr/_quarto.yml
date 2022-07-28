@@ -7,8 +7,8 @@ book:
   cover-image: images/cover.png
   chapters:
     - index.qmd
-    - intro.qmd
-    - summary.qmd
+    - 01_speech_2_text_via_azure.qmd
+    - 02_kinematics.qmd
     - references.qmd
 
 bibliography: references.bib
