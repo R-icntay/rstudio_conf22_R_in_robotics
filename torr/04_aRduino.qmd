@@ -79,8 +79,6 @@ open(arduino)
 isOpen(arduino)
 ```
 
-### 
-
 ### **Writing data from RStudio to the serial interface**
 
 At this point, we are all set to write some data to the serial interface.
