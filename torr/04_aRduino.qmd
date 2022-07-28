@@ -14,13 +14,14 @@ editor: visual
 execute: 
   warning: false
   message: false
-  eval: true
+  eval: false
 bibliography: references.bib
 ---
 
 ## The R in Arduino
 
-This notebook describes how we set up a communication interface between R and a microcontroller ( Arduino).
+This notebook briefly describes how we set up a communication interface between R and a microcontroller ( Arduino).
+Most of it is based on a blog post I wrote a while back: [***What we R about when we R about R and Arduino***](https://rpubs.com/eR_ic/rduino)***.***
 
 [`Arduino`](https://www.arduino.cc/en/Guide/Introduction) is an open-source electronics platform based on easy-to-use hardware (`Arduino Board`) and software (`Arduino IDE`).
 One can tell the board what to do if one has the correct form of data and a set of instructions for processing the data and performing subsequent operations.
@@ -122,7 +123,71 @@ for (r in 1:nrow(arduino_input)){
 Sys.sleep(2)
 ```
 
-### **Reading data sent from Arduino board** 
+### Driving the manipulator's servo motors
+
+The Arduino board itself is a programmable platform.
+You can tell your board what to do by sending a set of instructions to the microcontroller on the board.
+To do so you use the [Arduino programming language](https://www.arduino.cc/en/Reference/HomePage) and [the Arduino Software (IDE)](https://www.arduino.cc/en/Main/Software).
+Here are sample instructions that were uploaded to the microcontroller:
+
+    if(Serial.available()){ // checks data in serial
+
+      static int t=0;
+
+        char mychar=Serial.read(); // reads serial data
+
+        switch(mychar){      
+
+          case '0'...'9':
+
+            t=t*10 + mychar - '0’; // parse integers​
+
+            break;
+
+          case 'A':
+
+            {
+
+                servoA.write(t,50,1); // write value to motor
+
+                Serial.println(t); // print data to serial
+
+            }
+
+            t=0;​
+
+            break;​
+
+            ...​
+
+        }
+
+On a very high level, the microcontroller:
+
+-   Checks whether data is available on the serial interface.
+
+-   Reads the data one byte at a time
+
+-   Uses a series of switch case commands to
+
+    -   Parse integers
+
+    -   Write motor angles (send an electrical signal) to each respective motor based on the motor's tag e.g `A`, `B` or `C`
+
+So how do the servo motors actually rotate?
+Servos are controlled using adjustable pulse widths on the signal line.
+This is achieved using a technique called `Pulse Width Modulation`.
+PWM is a modulation technique that generates variable-width pulses to represent the amplitude of an analog input signal.
+
+For a standard servo, sending a `1 ms 5V` pulse turns the motor to `0` degrees, and sending a `2 ms 5V` pulse turns the motor to `180` degrees, with pulse lengths in the middle scaling linearly.
+A `1.5 ms` pulse, for example, turns the motor to 90 degrees.
+Once a pulse has been sent, the servo turns to that position and stays there until another pulse instruction is received.
+However, if you want a servo to "hold" its position (resist being pushed on and try to maintain the exact position), you just resend the command once every 20 ms. The Arduino servo commands \`servo.write take care of all this for you.
+To better understand how servo control works, please see the timing diagram:
+
+![Servo motor timing diagram: Jeremy Blum - Exploring Arduino](images/servo_timing.PNG){width="500"}
+
+### **Reading data sent from Arduino board**
 
 We can read the values sent to the serial port connection by Arduino script using `read.serialConnection()`
 
