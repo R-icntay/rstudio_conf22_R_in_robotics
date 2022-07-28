@@ -1,5 +1,6 @@
 ---
-title: "Where is the manipulator going?"
+title: "Board mapping"
+author: "Eric Wanjau and Ian Muchiri"
 toc: true
 toc-location: left
 format: 
@@ -11,16 +12,16 @@ format:
     code-link: true
 editor: visual
 execute: 
+  eval: true
   warning: false
   message: false
 ---
 
 This notebook illustrates how we assigned real world board coordinates (cm) to each square box on the chess board.
 
-The approach was quite straightforward.
-We created a virtual board and then translated virtual coordinates to the manipulator's workspace.
+The approach was quite straightforward. We created a virtual board and then translated virtual coordinates to the manipulator's workspace.
 
-### Creating virtual chessboard.
+## Creating virtual chessboard.
 
 ```{r}
 library(here)
@@ -46,7 +47,7 @@ ggsave("images/checkerboard.png", width = 7, height = 7)
 
 ```
 
-### Convert image into a tibble
+## Convert image into a tibble
 
 ```{r}
 library(magick)
@@ -90,8 +91,7 @@ img_dfx <- img_array %>%
   ungroup()
 ```
 
-Only centroid locations are of importance.
-So we narrow down to that:
+Only centroid locations are of importance. So we narrow down to that:
 
 ```{r}
 # Obtain location centroids
@@ -100,10 +100,9 @@ centroids <- img_dfx %>%
   distinct(pos, centroidx, centroidy)
 ```
 
-### Mapping coordinates to xy
+## Mapping coordinates to xy
 
-Once the centroid pixel coordinates were successfully extracted, the next step involved translating them to their corresponding real-world x-y coordinates in cm.
-This scaling from pixel values to cm values was achieved by the mapping function or simply using `scales::rescale()`:
+Once the centroid pixel coordinates were successfully extracted, the next step involved translating them to their corresponding real-world x-y coordinates in cm. This scaling from pixel values to cm values was achieved by the mapping function or simply using `scales::rescale()`:
 
 ```{r}
 # Mapping function
@@ -142,7 +141,7 @@ theme_set(theme_void())
 centroids %>% 
   ggplot(mapping = aes(x = centroidx*2, y = centroidy*2)) +
   geom_tile(aes(fill = str_extract(pos, "[:alpha:]")), color = "white", alpha = 0.8, size = 0.8, show.legend = FALSE) +
-  geom_text(aes(x = centroidx*2, y = centroidy*2 + 2, label = pos), color = "black", size = 5.5) +
+  geom_text(aes(x = centroidx*2, y = centroidy*2 + 2, label = pos), color = "black", size = 3.5) +
   coord_equal() +
   #paletteer::scale_fill_paletteer_d("RColorBrewer::Set2") +
   scale_fill_manual(values = paletteer::paletteer_d("RColorBrewer::Set2") %>% paste() %>% str_replace("#FFD92FFF", "#FFC000FF"))
@@ -152,7 +151,7 @@ centroids %>%
 centroids %>% 
   ggplot(mapping = aes(x = centroidx*2, y = centroidy*2)) +
   geom_tile(aes(fill = str_extract(pos, "[:alpha:]")), color = "white", alpha = 0.8, size = 0.8, show.legend = FALSE) +
-  geom_text(aes(x = centroidx*2, y = centroidy*2 + 2, label = paste("(", centroidx, ",", centroidy, ")", sep = "")), color = "black", size = 4.3) +
+  geom_text(aes(x = centroidx*2, y = centroidy*2 + 2, label = paste("(", centroidx, ",", centroidy, ")", sep = "")), color = "black", size = 3.3) +
   coord_equal() +
   #paletteer::scale_fill_paletteer_d("RColorBrewer::Set2") +
   scale_fill_manual(values = paletteer::paletteer_d("RColorBrewer::Set2") %>% paste() %>% str_replace("#FFD92FFF", "#FFC000FF"))
@@ -161,7 +160,7 @@ centroids %>%
 centroids %>% 
   ggplot(mapping = aes(x = centroidx*2, y = centroidy*2)) +
   geom_tile(aes(fill = str_extract(pos, "[:alpha:]")), color = "white", alpha = 0.8, size = 0.8, show.legend = FALSE) +
-  geom_text(aes(x = centroidx*2, y = centroidy*2 + 2, label = paste("(", x_mapped, ",", y_mapped, ")", sep = "")), color = "black", size = 5.3) +
+  geom_text(aes(x = centroidx*2, y = centroidy*2 + 2, label = paste("(", x_mapped, ",", y_mapped, ")", sep = "")), color = "black", size = 3.3) +
   coord_equal() +
   #paletteer::scale_fill_paletteer_d("RColorBrewer::Set2") +
   scale_fill_manual(values = paletteer::paletteer_d("RColorBrewer::Set2") %>% paste() %>% str_replace("#FFD92FFF", "#FFC000FF"))
@@ -186,19 +185,17 @@ get_centroid <- function(position){
 }
 
 # Define initial and final positions
-initial_pos <- "C1"
-final_pos <- "B1"
+initial_pos <- "B2"
+final_pos <- "G2"
 get_centroid(position = initial_pos)
 get_centroid(position = final_pos)
 ```
 
 ## Summary
 
-This is the approach we took at this step.
-We created a virtual board and then translated virtual coordinates to the manipulator's workspace.
+This is the approach we took at this step. We created a virtual board and then translated virtual coordinates to the manipulator's workspace.
 
-And with that, this section is done!
-Please do feel free to reach out in case of any questions, feedback and suggestions.
+And with that, this section is done! Please do feel free to reach out in case of any questions, feedback and suggestions.
 
 Happy Learning,
 
