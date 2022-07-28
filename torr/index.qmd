@@ -12,6 +12,4 @@ We hope you enjoy it as much as we did 🤖.
 
 <br> <br>
 
-<center><font size="3">combining R and Arduino to perform a pick and place action </font></center>
 
-![](images/comp_traj.mp4){fig-align="center" width="500"}

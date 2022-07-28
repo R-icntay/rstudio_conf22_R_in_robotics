@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.387">
+<meta name="generator" content="quarto-1.0.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -100,13 +100,14 @@ div.csl-indent {
 }
 </style>
 
+
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
-<meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
 <link href="./03_board_mapping.html" rel="next">
 <link href="./01_speech_2_text_via_azure.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -114,10 +115,10 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link id="quarto-text-highlighting-styles" href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -138,7 +139,7 @@ div.csl-indent {
   }
 }</script>
 
-  <script defer="" src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
  var mathElements = document.getElementsByClassName("math");
  var macros = [];
@@ -153,7 +154,7 @@ div.csl-indent {
    });
 }}});
   </script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
 </head>
 
@@ -249,8 +250,6 @@ div.csl-indent {
 
 
 
-
-
 <div class="quarto-title-meta">
 
     <div>
@@ -277,25 +276,25 @@ div.csl-indent {
 <h3 data-number="2.1.1" class="anchored" data-anchor-id="forward-kinematics"><span class="header-section-number">2.1.1</span> Forward Kinematics</h3>
 <p>Forward kinematics addresses the problem of computing the <strong>position and orientation of the end effector</strong> relative to the user’s workstation given the joint angles of the manipulator.</p>
 <p>The forward kinematics were performed in accordance with the <a href="https://en.wikipedia.org/wiki/Denavit%E2%80%93Hartenberg_parameters">Denavit—Hartenberg (D-H)</a> convention. According to the D-H convention, any robot can be described kinematically by giving the values of four quantities, typically known as the D-H parameters, for each link. The link length <span class="math inline">a</span> and the link twist <span class="math inline">\alpha</span>quantities<em>,</em> describe the link itself and the remaining two; link offset <span class="math inline">d</span> and the joint angle <span class="math inline">\theta</span> describe the link’s connection to a neighboring link.</p>
-<p>To perform the manipulator kinematics, link frames were attached to the manipulator as shown in <a href="#fig-dh">Figure&nbsp;<span>2.1</span></a>. In summary, link frames are laid out as follows:</p>
+<p>To perform the manipulator kinematics, link frames were attached to the manipulator as shown in <a href="#fig-dh">Figure&nbsp;<span class="quarto-unresolved-ref">fig-dh</span></a>. In summary, link frames are laid out as follows:</p>
 <ol type="1">
 <li>The <span class="math inline">z-axis</span> is in the direction of the joint axis.</li>
 <li>The <span class="math inline">x-axis</span> is parallel to the common normal.</li>
 <li>The <span class="math inline">y-axis</span> follows from the x-axis and z-axis by choosing it to be a right-handed coordinate system.</li>
 </ol>
-<div class="quarto-layout-panel">
+<div id="fig-dh" class="quarto-layout-panel">
 <figure class="figure">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/MeArm3D.jpg" class="img-fluid figure-img" width="400"></p>
-<p></p><figcaption aria-hidden="true" class="figure-caption">meArm parallel-link manipulator</figcaption><p></p>
+<p></p><figcaption class="figure-caption">meArm parallel-link manipulator</figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
-<p></p><figcaption aria-hidden="true" class="figure-caption">Figure 2.1: <img src="images/meArm.png" title="fig:" class="img-fluid figure-img" width="400" alt="DH Convention Frame assignment"></figcaption><p></p>
+<p></p><figcaption class="figure-caption">Figure 2.1: <img src="images/meArm.png" title="fig:" class="img-fluid figure-img" width="400" alt="DH Convention Frame assignment"></figcaption><p></p>
 </figure>
 </div>
 <p>Once the link frames have been laid, the D-H parameters can be easily defined as:</p>
@@ -339,7 +338,7 @@ div.csl-indent {
 </tr>
 </tbody>
 </table>
-<p>In this convention, each homogeneous transformation <span class="math inline">A_i</span> is represented as a product of the four basic transformations <span class="citation" data-cites="spong2005robot">(<a href="references.html#ref-spong2005robot" role="doc-biblioref">Spong, Hutchinson, and Vidyasagar 2005</a>)</span>, which evaluates to a <span class="math inline">4\times4</span> matrix that is used to transform a point from frame <span class="math inline">n</span> to <span class="math inline">n\ -1</span>.</p>
+<p>In this convention, each homogeneous transformation <span class="math inline">A_i</span> is represented as a product of the four basic transformations <span class="citation" data-cites="spong2005robot">(<a href="#ref-spong2005robot" role="doc-biblioref">Spong, Hutchinson, and Vidyasagar 2005</a>)</span>, which evaluates to a <span class="math inline">4\times4</span> matrix that is used to transform a point from frame <span class="math inline">n</span> to <span class="math inline">n\ -1</span>.</p>
 <p><span class="math display">
 A_i = Rot_{z, \theta_i}\ Trans_{x, a_i}\ Rot_{x, \alpha_i} \\
 </span></p>
@@ -586,7 +585,7 @@ r = \sqrt{x^2 + y^2}
 
 <!-- -->
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
 <div id="ref-spong2005robot" class="csl-entry" role="doc-biblioentry">
 Spong, M. W., S. Hutchinson, and M. Vidyasagar. 2005. <em>Robot Modeling and Control</em>. Wiley.
 </div>
@@ -596,6 +595,24 @@ Spong, M. W., S. Hutchinson, and M. Vidyasagar. 2005. <em>Robot Modeling and Con
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
