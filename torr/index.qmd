@@ -7,8 +7,7 @@ In these series of notebooks, we try as much as possible to provide detailed exp
 We hope you enjoy it as much as we did 🤖.
 
 ::: callout-note
-`Hujambo` is a *Swahili* word used in the context of `Hello` or `How are you?`.
-One typically replies with `Sijambo` meaning `I am fine`
+`Hujambo` is a *Swahili* word used in the context of `Hello` or `How are you?`. One typically replies with `Sijambo` meaning `I am fine`
 :::
 
 <br> <br>
