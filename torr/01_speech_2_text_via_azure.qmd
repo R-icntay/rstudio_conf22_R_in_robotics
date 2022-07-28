@@ -24,13 +24,18 @@ This notebook contains a step by step guide on how to record audio in R using th
 
 ## Introduction
 
-I recently found myself working on a chess play automation project. The user would issue a voice command describing the location of the piece they want to move and their desired destination location, the data would then processed and a chess move made. This was so cool and being the R-nista that I am (i don't think this is a word, i have only come across Pythonistas ) ,I thought to myself, maybe this can also be done in R and voila, this article was born. For any feedback feel free to reach out at [Ian](https://twitter.com/Entity_4004)
+I recently found myself working on a chess play automation project.
+The user would issue a voice command describing the location of the piece they want to move and their desired destination location, the data would then processed and a chess move made.
+This was so cool and being the R-nista that I am (i don't think this is a word, i have only come across Pythonistas ) ,I thought to myself, maybe this can also be done in R and voila, this article was born.
+For any feedback feel free to reach out at [Ian](https://twitter.com/Entity_4004)
 
 ## Recording Audio in R using the audio Package
 
-We begin with the input which we plan to transcribe. In order to record audio,we need to install and load the audio package
+We begin with the input which we plan to transcribe.
+In order to record audio,we need to install and load the audio package
 
 ```{r}
+#| eval:false
 #install the audio package
 install.packages("audio")
 
@@ -66,11 +71,14 @@ current.audio.driver()
 
 Some of the key parameters in audio processing which we are going to encounter during this exercise include:
 
-**Sample rate:** This is the number of times per second a sound is sampled and recorded.Therefore, if we use a sampling rate of say 8000 Hertz, a recording with a duration of 5 seconds will contain 40,000 samples (8000 \* 5). The industry standard sampling rate commonly used is 44100 Hertz.
+**Sample rate:** This is the number of times per second a sound is sampled and recorded.Therefore, if we use a sampling rate of say 8000 Hertz, a recording with a duration of 5 seconds will contain 40,000 samples (8000 \* 5).
+The industry standard sampling rate commonly used is 44100 Hertz.
 
-**Mono vs Stereo:** If you are a sound enthusiast, you've probably come across these terms. Simply put, Mono sound is recorded and played back using only *one audio channel* e.g. a guitarist recording using one mic to pick up sound of the guitar and Stereo sound is recorded and played through *more than one channel.*
+**Mono vs Stereo:** If you are a sound enthusiast, you've probably come across these terms.
+Simply put, Mono sound is recorded and played back using only *one audio channel* e.g. a guitarist recording using one mic to pick up sound of the guitar and Stereo sound is recorded and played through *more than one channel.*
 
-In our case we will use one audio channel(mono) and a sampling rate of 44100Hz. That being said let's start our recording
+In our case we will use one audio channel(mono) and a sampling rate of 44100Hz.
+That being said let's start our recording
 
 ```{r}
 #Set our recording time
@@ -88,7 +96,11 @@ file.create("sample.wav")#gets created in your current working directory
 save.wave(rec,"Insert_path_to_sample.wav_here")
 ```
 
-On recording and saving the audio file to `sample.wav` , we have to clear the audio instance object `audio_obj` before proceeding to make the next recording. From the audio package documentation, this is achieved by using the `close(con,…)` method, where `con` is the audioInstance object .However, using this method proved to be cumbersome as it causes the console to freeze anytime you want to record audio for more than one time. After doing some research, I discovered that restarting the console clears the audio instance object therefore allowing for one to record audio multiple times with no issue. I know this is not an elegant solution (more like tying duct tape around a leaking pipe )and i am actively looking for a better solution to fix this issue. For now, we go by the saying: if it works, don't touch it and implement this step to clear the audio instance object.
+On recording and saving the audio file to `sample.wav` , we have to clear the audio instance object `audio_obj` before proceeding to make the next recording.
+From the audio package documentation, this is achieved by using the `close(con,…)` method, where `con` is the audioInstance object .However, using this method proved to be cumbersome as it causes the console to freeze anytime you want to record audio for more than one time.
+After doing some research, I discovered that restarting the console clears the audio instance object therefore allowing for one to record audio multiple times with no issue.
+I know this is not an elegant solution (more like tying duct tape around a leaking pipe )and i am actively looking for a better solution to fix this issue.
+For now, we go by the saying: if it works, don't touch it and implement this step to clear the audio instance object.
 
 ```{r}
 .rs.restartR() # clear the audio instance object(looking for a more elegant solution)
@@ -102,13 +114,17 @@ play(rec)
 
 ```
 
-That's it for our input. We now proceed to process this and transcribe the audio we just recorded
+That's it for our input.
+We now proceed to process this and transcribe the audio we just recorded
 
 ## House Keeping on Azure
 
-First we begin with some light housekeeping, i.e setting up a [Cognitive Services resource](https://docs.microsoft.com/en-us/azure/cognitive-services/what-are-cognitive-services) in our Azure subscription. You can create a free Azure account [here](https://azure.microsoft.com/en-gb/) and if you have an account already, you can skip this step.
+First we begin with some light housekeeping, i.e setting up a [Cognitive Services resource](https://docs.microsoft.com/en-us/azure/cognitive-services/what-are-cognitive-services) in our Azure subscription.
+You can create a free Azure account [here](https://azure.microsoft.com/en-gb/) and if you have an account already, you can skip this step.
 
-We then proceed to create a cognitive resource group by following these steps:$\\$ 1. Open the Azure portal `https://portal.azure.com` and sign in using your Microsoft account.$\\$ 2. Click **+ Create a resource** and on the search bar, type **Speech**, click **create** and create a Cognitive service resource with the following settings:
+We then proceed to create a cognitive resource group by following these steps:$\\$ 1.
+Open the Azure portal `https://portal.azure.com` and sign in using your Microsoft account.$\\$ 2.
+Click **+ Create a resource** and on the search bar, type **Speech**, click **create** and create a Cognitive service resource with the following settings:
 
 -   Subscription: *Enter your Azure subscription*
 
@@ -124,25 +140,32 @@ We then proceed to create a cognitive resource group by following these steps:$\
 
 -   Click on **Review + create** and we are good to go.
 
-As a guide, these are the settings I used however, you can go ahead and get creative with the names.![](images/Tafsiri_setup_Screenshot%20(30).png)
+As a guide, these are the settings I used however, you can go ahead and get creative with the names.
+
+![](images/creating%20speech%20service.png)
 
 ## Speech-to-text API call
 
-Since now we have our audio sample input `sample.wav` ,we can now go ahead to the transcribing bit. It is noteworthy that the speech to text rest API for short audio has several limitations which are:
+Since now we have our audio sample input `sample.wav` ,we can now go ahead to the transcribing bit.
+It is noteworthy that the speech to text rest API for short audio has several limitations which are:
 
--   Requests cannot contain more than 60 seconds of audio. For batch transcriptions and custom speech use [Speech to Text API v3.0](https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/rest-speech-to-text)
+-   Requests cannot contain more than 60 seconds of audio.
+    For batch transcriptions and custom speech use [Speech to Text API v3.0](https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/rest-speech-to-text)
 
 -   The API does not provide partial results.
 
--   It does not support Speech translation. For translation, you can checkout the [Speech SDK](https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/speech-sdk)
+-   It does not support Speech translation.
+    For translation, you can checkout the [Speech SDK](https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/speech-sdk)
 
 Now that we are done with that, we can then go ahead and get coding.
 
-**`Note:`** To access the speech service we just created from R, we need the **URL of the endpoint**, **location/region details** and **KEY 1 & 2** parameters. These can be found in the azure portal under **Keys and Endpoint** page of your cognitive service resource as illustrated below:
+**`Note:`** To access the speech service we just created from R, we need the **URL of the endpoint**, **location/region details** and **KEY 1 & 2** parameters.
+These can be found in the azure portal under **Keys and Endpoint** page of your cognitive service resource as illustrated below:
 
-![](images/keys%20and%20endpoint%20page.png)
+![](images/keys%20and%20endpoints.png)
 
-Copy these details and save them since we are going to need them when make our API call. Note: you can use either **KEY 1** or **KEY 2** as your subscription key
+Copy these details and save them since we are going to need them when make our API call.
+Note: you can use either **KEY 1** or **KEY 2** as your subscription key
 
 To begin our transcription, install the packages we are going to need if you don't have them already installed:
 
@@ -152,7 +175,9 @@ install.packages("httr")
 install.packages("jsonlite")
 ```
 
-**Note** You will have to modify the subscription key, language and data path parameters to match the ones on the Cognitive Services resource you created earlier. Also modify the URL `'https://eastus.stt.speech.microsoft.com/speech/recognition/conversation/cognitiveservices/v1'` by inserting the aforementioned location details as shown in the modified URL : `'https://_ENTER_LOCATION_HERE_.stt.speech.microsoft.com/speech/recognition/conversation/cognitiveservices/v1'` . At the end you should have something like this:
+**Note** You will have to modify the subscription key, language and data path parameters to match the ones on the Cognitive Services resource you created earlier.
+Also modify the URL `'https://eastus.stt.speech.microsoft.com/speech/recognition/conversation/cognitiveservices/v1'` by inserting the aforementioned location details as shown in the modified URL : `'https://_ENTER_LOCATION_HERE_.stt.speech.microsoft.com/speech/recognition/conversation/cognitiveservices/v1'` .
+At the end you should have something like this:
 
 ```{r}
 
@@ -187,4 +212,8 @@ txt_input <- txt_output[1,2]
 txt_input
 ```
 
-And with that, we have successfully recorded audio and transcribed it with the aid of Microsoft Azure Cognitive Services. The applications of the cognitive services are wide and this is just but a glimpse of what one can accomplish using the Speech to Text service. I'll leave it at that. Thank you foR youR time. Cheers.
+And with that, we have successfully recorded audio and transcribed it with the aid of Microsoft Azure Cognitive Services.
+The applications of the cognitive services are wide and this is just but a glimpse of what one can accomplish using the Speech to Text service.
+I'll leave it at that.
+Thank you foR youR time.
+Cheers.
