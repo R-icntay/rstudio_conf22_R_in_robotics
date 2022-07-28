@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "A touch of R in robotics",
     "section": "",
-    "text": "Hujambo and welcome to the accompanying guide for our rstudio::conf(2022) talk: A Touch of R in Robotics.\nIn these series of notebooks, we try as much as possible to provide detailed explanations of the methodologies used along with the corresponding code.\nWe hope you enjoy it as much as we did 🤖.\n\n\n\n\n\n\nNote\n\n\n\nHujambo is a Swahili word used in the context of Hello or How are you?. One typically replies with Sijambo meaning I am fine\n\n\n \n\ncombining R and Arduino to perform a pick and place action \n\n\n\nVideo"
+    "text": "Hujambo and welcome to the accompanying guide for our rstudio::conf(2022) talk: A Touch of R in Robotics.\nIn these series of notebooks, we try as much as possible to provide detailed explanations of the methodologies used along with the corresponding code.\nWe hope you enjoy it as much as we did 🤖.\n\n\n\n\n\n\nNote\n\n\n\nHujambo is a Swahili word used in the context of Hello or How are you?. One typically replies with Sijambo meaning I am fine"
   },
   {
     "objectID": "01_speech_2_text_via_azure.html",

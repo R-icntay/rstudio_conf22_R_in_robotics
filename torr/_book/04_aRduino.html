@@ -5,7 +5,7 @@
 <meta name="generator" content="quarto-1.0.37">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 <meta name="author" content="Eric Wanjau and Ian Muchiri">
-<title>A touch of R in robotics - 4  R and Arduino</title>
+<title>A touch of R in robotics - 4&nbsp; R and Arduino</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -3897,7 +3897,7 @@ vertical-align: -.125em;
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top"><nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }"><div class="container-fluid d-flex justify-content-between">
       <h1 class="quarto-secondary-nav-title">
-<span class="chapter-number">4</span>  <span class="chapter-title">R and Arduino</span>
+<span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R and Arduino</span>
 </h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
@@ -3912,7 +3912,7 @@ vertical-align: -.125em;
       </div>
       <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
-        <div id="quarto-search" class title="Search"></div>
+        <div id="quarto-search" class="" title="Search"></div>
         </div>
       </div>
     <div class="sidebar-menu-container"> 
@@ -3924,27 +3924,27 @@ vertical-align: -.125em;
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01_speech_2_text_via_azure.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>  <span class="chapter-title">Speech to text</span></a>
+  <a href="./01_speech_2_text_via_azure.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Speech to text</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02_kinematics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>  <span class="chapter-title">Manipulator kinematics</span></a>
+  <a href="./02_kinematics.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Manipulator kinematics</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./03_board_mapping.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>  <span class="chapter-title">Board mapping</span></a>
+  <a href="./03_board_mapping.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Board mapping</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04_aRduino.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">4</span>  <span class="chapter-title">R and Arduino</span></a>
+  <a href="./04_aRduino.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R and Arduino</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>  <span class="chapter-title">Summary</span></a>
+  <a href="./summary.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Summary</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -3974,7 +3974,7 @@ vertical-align: -.125em;
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><div class="quarto-title">
 <div class="quarto-title-block"><div><h1 class="title d-none d-lg-block">
-<span class="chapter-number">4</span>  <span class="chapter-title">R and Arduino</span>
+<span class="chapter-number">4</span>&nbsp; <span class="chapter-title">R and Arduino</span>
 </h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
@@ -4002,7 +4002,7 @@ vertical-align: -.125em;
 <section id="setting-up-a-serial-connection-between-r-and-arduino" class="level3" data-number="4.1.1"><h3 data-number="4.1.1" class="anchored" data-anchor-id="setting-up-a-serial-connection-between-r-and-arduino">
 <span class="header-section-number">4.1.1</span> Setting up a serial connection between R and Arduino</h3>
 <p>Serial communication is the communication protocol that will be used between R and the Arduino software similar to what is used in the Arduino serial monitor. This communication interface will facilitate the transmission of data between the two interfaces.</p>
-<p>The serial package <span class="citation" data-cites="serial">(<a href="#ref-serial" role="doc-biblioref">Seilmayer 2020</a>)</span> will be used to set up this comunication interface.</p>
+<p>The serial package <span class="citation" data-cites="serial">(<a href="references.html#ref-serial" role="doc-biblioref">Seilmayer 2020</a>)</span> will be used to set up this comunication interface.</p>
 <p>Let’s begin by loading the required packages.</p>
 <div class="cell">
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
@@ -4017,14 +4017,14 @@ vertical-align: -.125em;
 <p>Create an Arduino object and set up the interface parameters.</p>
 <p>This is achieved using the <code><a href="https://rdrr.io/pkg/serial/man/serialConnection.html">serial::serialConnection</a></code> function. The interface parameters are such that the baud rate (specifies the number of bits being transferred per second) is set to <code>9600</code>, which is the same value in the Arduino script. Also, we have specified that the transmission ends with a new line and that the transmission is complete if the end of line symbol is the <code>carriage return cr</code>.</p>
 <div class="cell">
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">arduino</span> <span class="op">&lt;-</span>  <span class="fu"><a href="https://rdrr.io/pkg/serial/man/serialConnection.html">serialConnection</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">&quot;aRduino&quot;</span>,</span>
-<span>                           port <span class="op">=</span> <span class="st">&quot;COM5&quot;</span>,</span>
-<span>                           mode <span class="op">=</span> <span class="st">&quot;9600,n,8,1&quot;</span> ,</span>
-<span>                           buffering <span class="op">=</span> <span class="st">&quot;none&quot;</span>,</span>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">arduino</span> <span class="op">&lt;-</span>  <span class="fu"><a href="https://rdrr.io/pkg/serial/man/serialConnection.html">serialConnection</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"aRduino"</span>,</span>
+<span>                           port <span class="op">=</span> <span class="st">"COM5"</span>,</span>
+<span>                           mode <span class="op">=</span> <span class="st">"9600,n,8,1"</span> ,</span>
+<span>                           buffering <span class="op">=</span> <span class="st">"none"</span>,</span>
 <span>                           newline <span class="op">=</span> <span class="cn">TRUE</span>,</span>
-<span>                           eof <span class="op">=</span> <span class="st">&quot;&quot;</span>,</span>
-<span>                           translation <span class="op">=</span> <span class="st">&quot;cr&quot;</span>,</span>
-<span>                           handshake <span class="op">=</span> <span class="st">&quot;none&quot;</span>,</span>
+<span>                           eof <span class="op">=</span> <span class="st">""</span>,</span>
+<span>                           translation <span class="op">=</span> <span class="st">"cr"</span>,</span>
+<span>                           handshake <span class="op">=</span> <span class="st">"none"</span>,</span>
 <span>                           buffersize <span class="op">=</span> <span class="fl">8096</span></span>
 <span>                           </span>
 <span>                           <span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -4049,7 +4049,7 @@ vertical-align: -.125em;
 <span><span class="va">n</span> <span class="op">=</span> <span class="fl">42</span></span>
 <span><span class="va">arduino_input</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span></span>
 <span>  c <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fl">10</span><span class="op">:</span><span class="fl">100</span>, size <span class="op">=</span> <span class="va">n</span>, replace <span class="op">=</span> <span class="cn">T</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>                     <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">&#39;C&#39;</span>, sep <span class="op">=</span> <span class="st">&#39;&#39;</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span>                     <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">'C'</span>, sep <span class="op">=</span> <span class="st">''</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The chunk below uses <code><a href="https://rdrr.io/pkg/serial/man/write.serialConnection.html">serial::write.serialConnection()</a></code> to write the LED values to the serial port row by row.</p>
 <div class="cell">
@@ -4058,7 +4058,7 @@ vertical-align: -.125em;
 <span><span class="fu"><a href="https://rdrr.io/r/base/Sys.sleep.html">Sys.sleep</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span></span>
 <span><span class="kw">for</span> <span class="op">(</span><span class="va">r</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html">nrow</a></span><span class="op">(</span><span class="va">arduino_input</span><span class="op">)</span><span class="op">)</span><span class="op">{</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/Sys.sleep.html">Sys.sleep</a></span><span class="op">(</span><span class="fl">0.3</span><span class="op">)</span></span>
-<span>  <span class="fu"><a href="https://rdrr.io/pkg/serial/man/write.serialConnection.html">write.serialConnection</a></span><span class="op">(</span><span class="va">arduino</span>, <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="va">arduino_input</span><span class="op">[</span><span class="va">r</span>,<span class="op">]</span>, collapse <span class="op">=</span> <span class="st">&#39;&#39;</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/serial/man/write.serialConnection.html">write.serialConnection</a></span><span class="op">(</span><span class="va">arduino</span>, <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="va">arduino_input</span><span class="op">[</span><span class="va">r</span>,<span class="op">]</span>, collapse <span class="op">=</span> <span class="st">''</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="op">}</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/Sys.sleep.html">Sys.sleep</a></span><span class="op">(</span><span class="fl">2</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
@@ -4074,13 +4074,13 @@ vertical-align: -.125em;
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">switch</span><span class="op">(</span>mychar<span class="op">){</span>      </span>
 <span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>      <span class="cf">case</span> <span class="ch">&#39;0&#39;</span><span class="op">...</span><span class="ch">&#39;9&#39;</span><span class="op">:</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>      <span class="cf">case</span> <span class="ch">'0'</span><span class="op">...</span><span class="ch">'9'</span><span class="op">:</span></span>
 <span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>        t<span class="op">=</span>t<span class="op">*</span><span class="dv">10</span> <span class="op">+</span> mychar <span class="op">-</span> <span class="ch">&#39;0</span><span class="er">’; // parse integers​</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>        t<span class="op">=</span>t<span class="op">*</span><span class="dv">10</span> <span class="op">+</span> mychar <span class="op">-</span> <span class="ch">'0</span><span class="er">’; // parse integers​</span></span>
 <span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span><span class="op">;</span></span>
 <span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>      <span class="cf">case</span> <span class="ch">&#39;A&#39;</span><span class="op">:</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>      <span class="cf">case</span> <span class="ch">'A'</span><span class="op">:</span></span>
 <span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
 <span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a></span>
@@ -4116,14 +4116,14 @@ vertical-align: -.125em;
 <p></p><figcaption class="figure-caption">Servo motor timing diagram: Jeremy Blum - Exploring Arduino</figcaption><p></p>
 </figure>
 </div>
-<p>A great place to get started with Arduino and some hobby electronics projects would be <span class="citation" data-cites="blum2013exploring">Blum (<a href="#ref-blum2013exploring" role="doc-biblioref">2013</a>)</span>.</p>
+<p>A great place to get started with Arduino and some hobby electronics projects would be <span class="citation" data-cites="blum2013exploring">Blum (<a href="references.html#ref-blum2013exploring" role="doc-biblioref">2013</a>)</span>.</p>
 </section><section id="reading-data-sent-from-arduino-board" class="level3" data-number="4.1.5"><h3 data-number="4.1.5" class="anchored" data-anchor-id="reading-data-sent-from-arduino-board">
 <span class="header-section-number">4.1.5</span> <strong>Reading data sent from Arduino board</strong>
 </h3>
 <p>We can read the values sent to the serial port connection by Arduino script using <code><a href="https://rdrr.io/pkg/serial/man/read.serialConnection.html">read.serialConnection()</a></code></p>
 <div class="cell">
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">data_frm_arduino</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html">tibble</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/capture.output.html">capture.output</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/cat.html">cat</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/serial/man/read.serialConnection.html">read.serialConnection</a></span><span class="op">(</span><span class="va">arduino</span><span class="op">)</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span> </span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/across.html">if_any</a></span><span class="op">(</span><span class="fu">where</span><span class="op">(</span><span class="va">is.character</span><span class="op">)</span>, <span class="op">~</span> <span class="va">.x</span> <span class="op">!=</span> <span class="st">&quot;&quot;</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/across.html">if_any</a></span><span class="op">(</span><span class="fu">where</span><span class="op">(</span><span class="va">is.character</span><span class="op">)</span>, <span class="op">~</span> <span class="va">.x</span> <span class="op">!=</span> <span class="st">""</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
 <span></span>
 <span><span class="va">data_frm_arduino</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -4138,7 +4138,7 @@ vertical-align: -.125em;
 
 <!-- -->
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
 <div id="ref-blum2013exploring" class="csl-entry" role="doc-biblioentry">
 Blum, J. 2013. <em>Exploring Arduino: Tools and Techniques for Engineering Wizardry</em>. EEET 2046 : Electronics. Wiley. <a href="https://books.google.co.uk/books?id=iXsQAAAAQBAJ">https://books.google.co.uk/books?id=iXsQAAAAQBAJ</a>.
 </div>
@@ -4295,18 +4295,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
       <a href="./03_board_mapping.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>  <span class="chapter-title">Board mapping</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Board mapping</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./summary.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">5</span>  <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
-</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb9" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;R and Arduino&quot;</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> &quot;Eric Wanjau and Ian Muchiri&quot;</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "R and Arduino"</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Eric Wanjau and Ian Muchiri"</span></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="an">toc:</span><span class="co"> true</span></span>
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="an">toc-location:</span><span class="co"> left</span></span>
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
@@ -4328,11 +4328,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>This notebook briefly describes how we set up a communication interface between R and a microcontroller ( Arduino). Most of it is based on a blog post we wrote a while back: <span class="co">[</span><span class="ot">*What we R about when we R about R and Arduino*</span><span class="co">](https://rpubs.com/eR_ic/rduino)</span>***.***</span>
 <span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">`Arduino`</span><span class="co">](https://www.arduino.cc/en/Guide/Introduction)</span> is an open-source electronics platform based on easy-to-use hardware (<span class="in">`Arduino Board`</span>) and software (<span class="in">`Arduino IDE`</span>). One can tell the board what to do if one has the correct form of data and a set of instructions for processing the data and performing subsequent operations. The Arduino&#39;s microcontroller is responsible for holding all your compiled code and executing the commands you specify. The Arduino Software on the other hand is the board&#39;s IDE where one writes the set of instructions governing the board. The getting <span class="co">[</span><span class="ot">started guide</span><span class="co">](https://www.arduino.cc/en/Guide)</span> would be a good place to start learning about the Arduino ecosystem.</span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">`Arduino`</span><span class="co">](https://www.arduino.cc/en/Guide/Introduction)</span> is an open-source electronics platform based on easy-to-use hardware (<span class="in">`Arduino Board`</span>) and software (<span class="in">`Arduino IDE`</span>). One can tell the board what to do if one has the correct form of data and a set of instructions for processing the data and performing subsequent operations. The Arduino's microcontroller is responsible for holding all your compiled code and executing the commands you specify. The Arduino Software on the other hand is the board's IDE where one writes the set of instructions governing the board. The getting <span class="co">[</span><span class="ot">started guide</span><span class="co">](https://www.arduino.cc/en/Guide)</span> would be a good place to start learning about the Arduino ecosystem.</span>
 <span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>Switching over to R, we couldn&#39;t have found better words to summarize what <span class="in">`R`</span> is than with these words found in the book <span class="co">[</span><span class="ot">Advanced R</span><span class="co">](https://adv-r.hadley.nz/introduction.html)</span> by <span class="in">`Hadley Wickham`</span>: Despite its sometimes frustrating quirks, R is, at its heart, an elegant and beautiful language, well tailored for data science 🤗.</span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a>Switching over to R, we couldn't have found better words to summarize what <span class="in">`R`</span> is than with these words found in the book <span class="co">[</span><span class="ot">Advanced R</span><span class="co">](https://adv-r.hadley.nz/introduction.html)</span> by <span class="in">`Hadley Wickham`</span>: Despite its sometimes frustrating quirks, R is, at its heart, an elegant and beautiful language, well tailored for data science 🤗.</span>
 <span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>With all this said, a fine convergence can be struck between the two: <span class="in">`data`</span>. Consider this very simple example. We want the Arduino board to turn an LED (Light Emitting Diode) ON once it receives a <span class="in">`1`</span> and OFF once it receives a <span class="in">`0`</span>. If one can get a way of sending some data (1 or 0) to the board&#39;s microcontroller, then, the set objective will be achieved sooner or later.</span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>With all this said, a fine convergence can be struck between the two: <span class="in">`data`</span>. Consider this very simple example. We want the Arduino board to turn an LED (Light Emitting Diode) ON once it receives a <span class="in">`1`</span> and OFF once it receives a <span class="in">`0`</span>. If one can get a way of sending some data (1 or 0) to the board's microcontroller, then, the set objective will be achieved sooner or later.</span>
 <span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a><span class="fu">### Setting up a serial connection between R and Arduino</span></span>
 <span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a></span>
@@ -4340,7 +4340,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a>The serial package <span class="co">[</span><span class="ot">@serial</span><span class="co">]</span> will be used to set up this comunication interface.</span>
 <span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>Let&#39;s begin by loading the required packages.</span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a>Let's begin by loading the required packages.</span>
 <span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
@@ -4348,7 +4348,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span>
 <span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a>Next, we&#39;ll create a serial port object called <span class="in">`arduino`</span>, which represents a serial client for communication with the USB serial port where our board is connected.</span>
+<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a>Next, we'll create a serial port object called <span class="in">`arduino`</span>, which represents a serial client for communication with the USB serial port where our board is connected.</span>
 <span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-51"><a href="#cb9-51" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb9-52"><a href="#cb9-52" aria-hidden="true" tabindex="-1"></a><span class="co"># See the ports available</span></span>
@@ -4361,14 +4361,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb9-59"><a href="#cb9-59" aria-hidden="true" tabindex="-1"></a>This is achieved using the <span class="in">`serial::serialConnection`</span> function. The interface parameters are such that the baud rate (specifies the number of bits being transferred per second) is set to <span class="in">`9600`</span>, which is the same value in the Arduino script. Also, we have specified that the transmission ends with a new line and that the transmission is complete if the end of line symbol is the <span class="in">`carriage return cr`</span>.</span>
 <span id="cb9-60"><a href="#cb9-60" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-63"><a href="#cb9-63" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb9-64"><a href="#cb9-64" aria-hidden="true" tabindex="-1"></a>arduino <span class="ot">&lt;-</span>  <span class="fu">serialConnection</span>(<span class="at">name =</span> <span class="st">&quot;aRduino&quot;</span>,</span>
-<span id="cb9-65"><a href="#cb9-65" aria-hidden="true" tabindex="-1"></a>                           <span class="at">port =</span> <span class="st">&quot;COM5&quot;</span>,</span>
-<span id="cb9-66"><a href="#cb9-66" aria-hidden="true" tabindex="-1"></a>                           <span class="at">mode =</span> <span class="st">&quot;9600,n,8,1&quot;</span> ,</span>
-<span id="cb9-67"><a href="#cb9-67" aria-hidden="true" tabindex="-1"></a>                           <span class="at">buffering =</span> <span class="st">&quot;none&quot;</span>,</span>
+<span id="cb9-64"><a href="#cb9-64" aria-hidden="true" tabindex="-1"></a>arduino <span class="ot">&lt;-</span>  <span class="fu">serialConnection</span>(<span class="at">name =</span> <span class="st">"aRduino"</span>,</span>
+<span id="cb9-65"><a href="#cb9-65" aria-hidden="true" tabindex="-1"></a>                           <span class="at">port =</span> <span class="st">"COM5"</span>,</span>
+<span id="cb9-66"><a href="#cb9-66" aria-hidden="true" tabindex="-1"></a>                           <span class="at">mode =</span> <span class="st">"9600,n,8,1"</span> ,</span>
+<span id="cb9-67"><a href="#cb9-67" aria-hidden="true" tabindex="-1"></a>                           <span class="at">buffering =</span> <span class="st">"none"</span>,</span>
 <span id="cb9-68"><a href="#cb9-68" aria-hidden="true" tabindex="-1"></a>                           <span class="at">newline =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb9-69"><a href="#cb9-69" aria-hidden="true" tabindex="-1"></a>                           <span class="at">eof =</span> <span class="st">&quot;&quot;</span>,</span>
-<span id="cb9-70"><a href="#cb9-70" aria-hidden="true" tabindex="-1"></a>                           <span class="at">translation =</span> <span class="st">&quot;cr&quot;</span>,</span>
-<span id="cb9-71"><a href="#cb9-71" aria-hidden="true" tabindex="-1"></a>                           <span class="at">handshake =</span> <span class="st">&quot;none&quot;</span>,</span>
+<span id="cb9-69"><a href="#cb9-69" aria-hidden="true" tabindex="-1"></a>                           <span class="at">eof =</span> <span class="st">""</span>,</span>
+<span id="cb9-70"><a href="#cb9-70" aria-hidden="true" tabindex="-1"></a>                           <span class="at">translation =</span> <span class="st">"cr"</span>,</span>
+<span id="cb9-71"><a href="#cb9-71" aria-hidden="true" tabindex="-1"></a>                           <span class="at">handshake =</span> <span class="st">"none"</span>,</span>
 <span id="cb9-72"><a href="#cb9-72" aria-hidden="true" tabindex="-1"></a>                           <span class="at">buffersize =</span> <span class="dv">8096</span></span>
 <span id="cb9-73"><a href="#cb9-73" aria-hidden="true" tabindex="-1"></a>                           </span>
 <span id="cb9-74"><a href="#cb9-74" aria-hidden="true" tabindex="-1"></a>                           )</span>
@@ -4391,14 +4391,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb9-93"><a href="#cb9-93" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-94"><a href="#cb9-94" aria-hidden="true" tabindex="-1"></a>At this point, we are all set to write some data to the serial interface.</span>
 <span id="cb9-95"><a href="#cb9-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-96"><a href="#cb9-96" aria-hidden="true" tabindex="-1"></a>Let&#39;s prepare some data to send to the serial interface.</span>
+<span id="cb9-96"><a href="#cb9-96" aria-hidden="true" tabindex="-1"></a>Let's prepare some data to send to the serial interface.</span>
 <span id="cb9-97"><a href="#cb9-97" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-100"><a href="#cb9-100" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb9-101"><a href="#cb9-101" aria-hidden="true" tabindex="-1"></a><span class="do">## Create dummy data</span></span>
 <span id="cb9-102"><a href="#cb9-102" aria-hidden="true" tabindex="-1"></a>n <span class="ot">=</span> <span class="dv">42</span></span>
 <span id="cb9-103"><a href="#cb9-103" aria-hidden="true" tabindex="-1"></a>arduino_input <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
 <span id="cb9-104"><a href="#cb9-104" aria-hidden="true" tabindex="-1"></a>  <span class="at">c =</span> <span class="fu">sample</span>(<span class="dv">10</span><span class="sc">:</span><span class="dv">100</span>, <span class="at">size =</span> n, <span class="at">replace =</span> T) <span class="sc">%&gt;%</span></span>
-<span id="cb9-105"><a href="#cb9-105" aria-hidden="true" tabindex="-1"></a>                     <span class="fu">paste</span>(<span class="st">&#39;C&#39;</span>, <span class="at">sep =</span> <span class="st">&#39;&#39;</span>))</span>
+<span id="cb9-105"><a href="#cb9-105" aria-hidden="true" tabindex="-1"></a>                     <span class="fu">paste</span>(<span class="st">'C'</span>, <span class="at">sep =</span> <span class="st">''</span>))</span>
 <span id="cb9-106"><a href="#cb9-106" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-107"><a href="#cb9-107" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-108"><a href="#cb9-108" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
@@ -4411,16 +4411,16 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb9-117"><a href="#cb9-117" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.sleep</span>(<span class="dv">3</span>)</span>
 <span id="cb9-118"><a href="#cb9-118" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (r <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(arduino_input)){</span>
 <span id="cb9-119"><a href="#cb9-119" aria-hidden="true" tabindex="-1"></a>  <span class="fu">Sys.sleep</span>(<span class="fl">0.3</span>)</span>
-<span id="cb9-120"><a href="#cb9-120" aria-hidden="true" tabindex="-1"></a>  <span class="fu">write.serialConnection</span>(arduino, <span class="fu">paste</span>(arduino_input[r,], <span class="at">collapse =</span> <span class="st">&#39;&#39;</span>))</span>
+<span id="cb9-120"><a href="#cb9-120" aria-hidden="true" tabindex="-1"></a>  <span class="fu">write.serialConnection</span>(arduino, <span class="fu">paste</span>(arduino_input[r,], <span class="at">collapse =</span> <span class="st">''</span>))</span>
 <span id="cb9-121"><a href="#cb9-121" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb9-122"><a href="#cb9-122" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.sleep</span>(<span class="dv">2</span>)</span>
 <span id="cb9-123"><a href="#cb9-123" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb9-124"><a href="#cb9-124" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-125"><a href="#cb9-125" aria-hidden="true" tabindex="-1"></a><span class="fu">### Driving the manipulator&#39;s servo motors</span></span>
+<span id="cb9-125"><a href="#cb9-125" aria-hidden="true" tabindex="-1"></a><span class="fu">### Driving the manipulator's servo motors</span></span>
 <span id="cb9-126"><a href="#cb9-126" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-127"><a href="#cb9-127" aria-hidden="true" tabindex="-1"></a>The Arduino board itself is a programmable platform. You can tell your board what to do by sending a set of instructions to the microcontroller on the board. To do so you use the <span class="co">[</span><span class="ot">Arduino programming language</span><span class="co">](https://www.arduino.cc/en/Reference/HomePage)</span> and <span class="co">[</span><span class="ot">the Arduino Software (IDE)</span><span class="co">](https://www.arduino.cc/en/Main/Software)</span>. Here are sample instructions that were uploaded to the microcontroller:</span>
 <span id="cb9-128"><a href="#cb9-128" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-129"><a href="#cb9-129" aria-hidden="true" tabindex="-1"></a><span class="in">``` {.cpp style=&quot;color: #70AD47&quot;}</span></span>
+<span id="cb9-129"><a href="#cb9-129" aria-hidden="true" tabindex="-1"></a><span class="in">``` {.cpp style="color: #70AD47"}</span></span>
 <span id="cb9-130"><a href="#cb9-130" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-131"><a href="#cb9-131" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span><span class="op">(</span>Serial<span class="op">.</span>available<span class="op">()){</span> <span class="co">// checks data in serial</span></span>
 <span id="cb9-132"><a href="#cb9-132" aria-hidden="true" tabindex="-1"></a></span>
@@ -4430,13 +4430,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb9-136"><a href="#cb9-136" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-137"><a href="#cb9-137" aria-hidden="true" tabindex="-1"></a>    <span class="cf">switch</span><span class="op">(</span>mychar<span class="op">){</span>      </span>
 <span id="cb9-138"><a href="#cb9-138" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-139"><a href="#cb9-139" aria-hidden="true" tabindex="-1"></a>      <span class="cf">case</span> <span class="ch">&#39;0&#39;</span><span class="op">...</span><span class="ch">&#39;9&#39;</span><span class="op">:</span></span>
+<span id="cb9-139"><a href="#cb9-139" aria-hidden="true" tabindex="-1"></a>      <span class="cf">case</span> <span class="ch">'0'</span><span class="op">...</span><span class="ch">'9'</span><span class="op">:</span></span>
 <span id="cb9-140"><a href="#cb9-140" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-141"><a href="#cb9-141" aria-hidden="true" tabindex="-1"></a>        t<span class="op">=</span>t<span class="op">*</span><span class="dv">10</span> <span class="op">+</span> mychar <span class="op">-</span> <span class="ch">&#39;0</span><span class="er">’; // parse integers​</span></span>
+<span id="cb9-141"><a href="#cb9-141" aria-hidden="true" tabindex="-1"></a>        t<span class="op">=</span>t<span class="op">*</span><span class="dv">10</span> <span class="op">+</span> mychar <span class="op">-</span> <span class="ch">'0</span><span class="er">’; // parse integers​</span></span>
 <span id="cb9-142"><a href="#cb9-142" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-143"><a href="#cb9-143" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span><span class="op">;</span></span>
 <span id="cb9-144"><a href="#cb9-144" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-145"><a href="#cb9-145" aria-hidden="true" tabindex="-1"></a>      <span class="cf">case</span> <span class="ch">&#39;A&#39;</span><span class="op">:</span></span>
+<span id="cb9-145"><a href="#cb9-145" aria-hidden="true" tabindex="-1"></a>      <span class="cf">case</span> <span class="ch">'A'</span><span class="op">:</span></span>
 <span id="cb9-146"><a href="#cb9-146" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-147"><a href="#cb9-147" aria-hidden="true" tabindex="-1"></a>        <span class="op">{</span></span>
 <span id="cb9-148"><a href="#cb9-148" aria-hidden="true" tabindex="-1"></a></span>
@@ -4465,13 +4465,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb9-171"><a href="#cb9-171" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-172"><a href="#cb9-172" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>Parse integers</span>
 <span id="cb9-173"><a href="#cb9-173" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-174"><a href="#cb9-174" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>Write motor angles (send an electrical signal) to each respective motor based on the motor&#39;s tag e.g <span class="in">`A`</span>, <span class="in">`B`</span> or <span class="in">`C`</span></span>
+<span id="cb9-174"><a href="#cb9-174" aria-hidden="true" tabindex="-1"></a><span class="ss">    -   </span>Write motor angles (send an electrical signal) to each respective motor based on the motor's tag e.g <span class="in">`A`</span>, <span class="in">`B`</span> or <span class="in">`C`</span></span>
 <span id="cb9-175"><a href="#cb9-175" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-176"><a href="#cb9-176" aria-hidden="true" tabindex="-1"></a>So how do the servo motors actually rotate? Servos are controlled using adjustable pulse widths on the signal line. This is achieved using a technique called <span class="in">`Pulse Width Modulation`</span>. PWM is a modulation technique that generates variable-width pulses to represent the amplitude of an analog input signal.</span>
 <span id="cb9-177"><a href="#cb9-177" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-178"><a href="#cb9-178" aria-hidden="true" tabindex="-1"></a>For a standard servo, sending a <span class="in">`1 ms 5V`</span> pulse turns the motor to <span class="in">`0`</span> degrees, and sending a <span class="in">`2 ms 5V`</span> pulse turns the motor to <span class="in">`180`</span> degrees, with pulse lengths in the middle scaling linearly. A <span class="in">`1.5 ms`</span> pulse, for example, turns the motor to 90 degrees. Once a pulse has been sent, the servo turns to that position and stays there until another pulse instruction is received. However, if you want a servo to &quot;hold&quot; its position (resist being pushed on and try to maintain the exact position), you just resend the command once every 20 ms. The Arduino servo commands e.g <span class="in">`servo.write`</span> takes care of all this for you. To better understand how servo control works, please see the timing diagram:</span>
+<span id="cb9-178"><a href="#cb9-178" aria-hidden="true" tabindex="-1"></a>For a standard servo, sending a <span class="in">`1 ms 5V`</span> pulse turns the motor to <span class="in">`0`</span> degrees, and sending a <span class="in">`2 ms 5V`</span> pulse turns the motor to <span class="in">`180`</span> degrees, with pulse lengths in the middle scaling linearly. A <span class="in">`1.5 ms`</span> pulse, for example, turns the motor to 90 degrees. Once a pulse has been sent, the servo turns to that position and stays there until another pulse instruction is received. However, if you want a servo to "hold" its position (resist being pushed on and try to maintain the exact position), you just resend the command once every 20 ms. The Arduino servo commands e.g <span class="in">`servo.write`</span> takes care of all this for you. To better understand how servo control works, please see the timing diagram:</span>
 <span id="cb9-179"><a href="#cb9-179" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-180"><a href="#cb9-180" aria-hidden="true" tabindex="-1"></a><span class="al">![Servo motor timing diagram: Jeremy Blum - Exploring Arduino](images/servo_timing.PNG)</span>{width=&quot;500&quot;}</span>
+<span id="cb9-180"><a href="#cb9-180" aria-hidden="true" tabindex="-1"></a><span class="al">![Servo motor timing diagram: Jeremy Blum - Exploring Arduino](images/servo_timing.PNG)</span>{width="500"}</span>
 <span id="cb9-181"><a href="#cb9-181" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-182"><a href="#cb9-182" aria-hidden="true" tabindex="-1"></a>A great place to get started with Arduino and some hobby electronics projects would be @blum2013exploring.</span>
 <span id="cb9-183"><a href="#cb9-183" aria-hidden="true" tabindex="-1"></a></span>
@@ -4481,7 +4481,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb9-187"><a href="#cb9-187" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-190"><a href="#cb9-190" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb9-191"><a href="#cb9-191" aria-hidden="true" tabindex="-1"></a>data_frm_arduino <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="fu">capture.output</span>(<span class="fu">cat</span>(<span class="fu">read.serialConnection</span>(arduino)))) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-192"><a href="#cb9-192" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">if_any</span>(<span class="fu">where</span>(is.character), <span class="sc">~</span> .x <span class="sc">!=</span> <span class="st">&quot;&quot;</span>))</span>
+<span id="cb9-192"><a href="#cb9-192" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">if_any</span>(<span class="fu">where</span>(is.character), <span class="sc">~</span> .x <span class="sc">!=</span> <span class="st">""</span>))</span>
 <span id="cb9-193"><a href="#cb9-193" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-194"><a href="#cb9-194" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-195"><a href="#cb9-195" aria-hidden="true" tabindex="-1"></a>data_frm_arduino</span>
@@ -4489,7 +4489,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb9-197"><a href="#cb9-197" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-198"><a href="#cb9-198" aria-hidden="true" tabindex="-1"></a><span class="fu">### Summary</span></span>
 <span id="cb9-199"><a href="#cb9-199" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-200"><a href="#cb9-200" aria-hidden="true" tabindex="-1"></a>There we go! In this section, we leveraged Arduino&#39;s capability to be programmed via a serial interface to send and receive data from R to the Arduino board.</span>
+<span id="cb9-200"><a href="#cb9-200" aria-hidden="true" tabindex="-1"></a>There we go! In this section, we leveraged Arduino's capability to be programmed via a serial interface to send and receive data from R to the Arduino board.</span>
 <span id="cb9-201"><a href="#cb9-201" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-202"><a href="#cb9-202" aria-hidden="true" tabindex="-1"></a>Please do feel free to reach out in case of any questions, feedback and suggestions.</span>
 <span id="cb9-203"><a href="#cb9-203" aria-hidden="true" tabindex="-1"></a></span>

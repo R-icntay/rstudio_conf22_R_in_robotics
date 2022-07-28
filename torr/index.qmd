@@ -1,6 +1,6 @@
 # Preface {.unnumbered}
 
-Hujambo and welcome to the accompanying guide for our [rstudio::conf(2022)](https://www.rstudio.com/conference/) talk: *`A Touch of R in Robotics`*.
+Hujambo and welcome to the accompanying guide for our [rstudio::conf(2022)](https://www.rstudio.com/conference/) talk: [*`A Touch of R in Robotics`*](https://github.com/R-icntay/rstudio_conf22_R_in_robotics).
 
 In these series of notebooks, we try as much as possible to provide detailed explanations of the methodologies used along with the corresponding code.
 
@@ -11,5 +11,3 @@ We hope you enjoy it as much as we did 🤖.
 :::
 
 <br> <br>
-
-

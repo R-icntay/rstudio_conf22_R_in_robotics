@@ -276,7 +276,7 @@ div.csl-indent {
 <h3 data-number="2.1.1" class="anchored" data-anchor-id="forward-kinematics"><span class="header-section-number">2.1.1</span> Forward Kinematics</h3>
 <p>Forward kinematics addresses the problem of computing the <strong>position and orientation of the end effector</strong> relative to the user’s workstation given the joint angles of the manipulator.</p>
 <p>The forward kinematics were performed in accordance with the <a href="https://en.wikipedia.org/wiki/Denavit%E2%80%93Hartenberg_parameters">Denavit—Hartenberg (D-H)</a> convention. According to the D-H convention, any robot can be described kinematically by giving the values of four quantities, typically known as the D-H parameters, for each link. The link length <span class="math inline">a</span> and the link twist <span class="math inline">\alpha</span>quantities<em>,</em> describe the link itself and the remaining two; link offset <span class="math inline">d</span> and the joint angle <span class="math inline">\theta</span> describe the link’s connection to a neighboring link.</p>
-<p>To perform the manipulator kinematics, link frames were attached to the manipulator as shown in <a href="#fig-dh">Figure&nbsp;<span class="quarto-unresolved-ref">fig-dh</span></a>. In summary, link frames are laid out as follows:</p>
+<p>To perform the manipulator kinematics, link frames were attached to the manipulator as shown in <a href="#fig-dh">Figure&nbsp;<span>2.1</span></a>. In summary, link frames are laid out as follows:</p>
 <ol type="1">
 <li>The <span class="math inline">z-axis</span> is in the direction of the joint axis.</li>
 <li>The <span class="math inline">x-axis</span> is parallel to the common normal.</li>
@@ -338,7 +338,7 @@ div.csl-indent {
 </tr>
 </tbody>
 </table>
-<p>In this convention, each homogeneous transformation <span class="math inline">A_i</span> is represented as a product of the four basic transformations <span class="citation" data-cites="spong2005robot">(<a href="#ref-spong2005robot" role="doc-biblioref">Spong, Hutchinson, and Vidyasagar 2005</a>)</span>, which evaluates to a <span class="math inline">4\times4</span> matrix that is used to transform a point from frame <span class="math inline">n</span> to <span class="math inline">n\ -1</span>.</p>
+<p>In this convention, each homogeneous transformation <span class="math inline">A_i</span> is represented as a product of the four basic transformations <span class="citation" data-cites="spong2005robot">(<a href="references.html#ref-spong2005robot" role="doc-biblioref">Spong, Hutchinson, and Vidyasagar 2005</a>)</span>, which evaluates to a <span class="math inline">4\times4</span> matrix that is used to transform a point from frame <span class="math inline">n</span> to <span class="math inline">n\ -1</span>.</p>
 <p><span class="math display">
 A_i = Rot_{z, \theta_i}\ Trans_{x, a_i}\ Rot_{x, \alpha_i} \\
 </span></p>
@@ -585,7 +585,7 @@ r = \sqrt{x^2 + y^2}
 
 <!-- -->
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
 <div id="ref-spong2005robot" class="csl-entry" role="doc-biblioentry">
 Spong, M. W., S. Hutchinson, and M. Vidyasagar. 2005. <em>Robot Modeling and Control</em>. Wiley.
 </div>
