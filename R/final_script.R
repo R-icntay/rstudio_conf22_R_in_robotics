@@ -190,17 +190,21 @@ if(exists("already_ran") == FALSE){
   
   
   # Function that maps virtual board to manipulator work space
-  map_fun <- function(value, from_low, from_high, to_low, to_high){
-    
-    mapped_val = (value - from_low) * (to_high - to_low) / (from_high - from_low) + (to_low)
-    
-    return(mapped_val)
-  }
+  # Used scales::rescale instead
+  # map_fun <- function(value, from_low, from_high, to_low, to_high){
+  #   
+  #   mapped_val = (value - from_low) * (to_high - to_low) / (from_high - from_low) + (to_low)
+  #   
+  #   return(mapped_val)
+  # }
   
   # Map virtual board coordinates to manipulator workspace
   centroids = centroids %>% 
-    mutate(x_mapped = map_fun(centroidx, from_low = 0, from_high = dim_x, to_low = 9, to_high = -9),
-           y_mapped = map_fun(centroidy, from_low = 0, from_high = 192, to_low = 11, to_high = 17)) %>% 
+    # mutate(x_mapped = map_fun(centroidx, from_low = 0, from_high = dim_x, to_low = 9, to_high = -9),
+    #        y_mapped = map_fun(centroidy, from_low = 0, from_high = 192, to_low = 11, to_high = 17)) %>% 
+    ## Use scales::rescale
+    mutate(x_mapped = scales::rescale(centroidx, to = c(9, -9), from = c(0, 640)),
+           y_mapped = scales::rescale(centroidy, to = c(11, 17), from = c(0, 192))) %>% 
     mutate(across(where(is.numeric), round)) %>% 
     # Rearrange board positions to match our physical chess board
     mutate(
