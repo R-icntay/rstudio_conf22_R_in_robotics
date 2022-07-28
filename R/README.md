@@ -1,0 +1,1 @@
+`final_script.R` combined all the code chunks from the `.qmd`s  in the folder [torr](C:\Users\medewan\Documents\GitHub\rstudio_conf22_R_in_robotics\torr)
