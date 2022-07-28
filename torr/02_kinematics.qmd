@@ -15,7 +15,7 @@ format:
       - left=30mm
   docx: default
 execute: 
-  eval: false
+  eval: true
   warning: false
   message: false
 bibliography: references.bib
@@ -36,12 +36,9 @@ Kinematics is the science of motion that treats the subject without regard to th
 
 Forward kinematics addresses the problem of computing the **position and orientation of the end effector** relative to the user's workstation given the joint angles of the manipulator.
 
-The forward kinematics were performed in accordance with the [Denavit---Hartenberg (D-H)](https://en.wikipedia.org/wiki/Denavit%E2%80%93Hartenberg_parameters) convention.
-According to the D-H convention, any robot can be described kinematically by giving the values of four quantities, typically known as the D-H parameters, for each link.
-The link length $a$ and the link twist $\alpha$quantities*,* describe the link itself and the remaining two; link offset $d$ and the joint angle $\theta$ describe the link's connection to a neighboring link.
+The forward kinematics were performed in accordance with the [Denavit---Hartenberg (D-H)](https://en.wikipedia.org/wiki/Denavit%E2%80%93Hartenberg_parameters) convention. According to the D-H convention, any robot can be described kinematically by giving the values of four quantities, typically known as the D-H parameters, for each link. The link length $a$ and the link twist $\alpha$quantities*,* describe the link itself and the remaining two; link offset $d$ and the joint angle $\theta$ describe the link's connection to a neighboring link.
 
-To perform the manipulator kinematics, link frames were attached to the manipulator as shown in @fig-dh.
-In summary, link frames are laid out as follows:
+To perform the manipulator kinematics, link frames were attached to the manipulator as shown in @fig-dh. In summary, link frames are laid out as follows:
 
 1.  The $z-axis$ is in the direction of the joint axis.
 2.  The $x-axis$ is parallel to the common normal.
@@ -214,11 +211,9 @@ fkin(motor_angles =c(42, 110, 114))
 
 ### Inverse kinematics
 
-Inverse kinematics addresses the more difficult converse problem of computing the **set of joint angles** that will place the end effector at a desired position and orientation.
-It is the computation of the manipulator joint angles given the position and orientation of the end effector.
+Inverse kinematics addresses the more difficult converse problem of computing the **set of joint angles** that will place the end effector at a desired position and orientation. It is the computation of the manipulator joint angles given the position and orientation of the end effector.
 
-In solving the inverse kinematics problem, the Geometric approach was used to decompose the spatial geometry into several plane-geometry problems based on the sine and the cosine rules.
-This was done by considering the trigonometric decomposition of various planes of the manipulator as graphically illustrated below:
+In solving the inverse kinematics problem, the Geometric approach was used to decompose the spatial geometry into several plane-geometry problems based on the sine and the cosine rules. This was done by considering the trigonometric decomposition of various planes of the manipulator as graphically illustrated below:
 
 ::: {layout="[[1,1]]"}
 ![](images/base_rotation.png)
@@ -290,8 +285,7 @@ ikin <- function(xyz_coordinates){
 }
 ```
 
-Theoretically, the results from inverse kinematics and forward kinematics should be in tandem for a given set of inputs.
-Let's see whether we can get our previous joint angles from the results of the forward kinematics.
+Theoretically, the results from inverse kinematics and forward kinematics should be in tandem for a given set of inputs. Let's see whether we can get our previous joint angles from the results of the forward kinematics.
 
 ```{r}
 # Calculate inverse kinematics
@@ -301,11 +295,9 @@ ikin(xyz_coordinates = c(-11, 10, -3))
 
 ## Summary
 
-From the above examples, the xyz coordinate values obtained from forward kinematics operation produced the same input angles when passed through the inverse kinematics equations.
-This will be essential for future operations such as validating whether motor angle rotations result in a desired xyz position of the end effector.
+From the above examples, the xyz coordinate values obtained from forward kinematics operation produced the same input angles when passed through the inverse kinematics equations. This will be essential for future operations such as validating whether motor angle rotations result in a desired xyz position of the end effector.
 
-And with that, this section is done!
-Please do feel free to reach out in case of any questions, feedback and suggestions.
+And with that, this section is done! Please do feel free to reach out in case of any questions, feedback and suggestions.
 
 Happy LeaRning,
 
