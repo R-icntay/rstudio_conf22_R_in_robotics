@@ -8,7 +8,7 @@ format:
     self-contained: true
     number-sections: true
     code-tools: true
-    code-fold: true
+    code-fold: false
     code-link: true
 editor: visual
 execute: 
@@ -20,26 +20,17 @@ bibliography: references.bib
 
 ## The R in Arduino
 
-This notebook briefly describes how we set up a communication interface between R and a microcontroller ( Arduino).
-Most of it is based on a blog post I wrote a while back: [***What we R about when we R about R and Arduino***](https://rpubs.com/eR_ic/rduino)***.***
+This notebook briefly describes how we set up a communication interface between R and a microcontroller ( Arduino). Most of it is based on a blog post we wrote a while back: [*What we R about when we R about R and Arduino*](https://rpubs.com/eR_ic/rduino)***.***
 
-[`Arduino`](https://www.arduino.cc/en/Guide/Introduction) is an open-source electronics platform based on easy-to-use hardware (`Arduino Board`) and software (`Arduino IDE`).
-One can tell the board what to do if one has the correct form of data and a set of instructions for processing the data and performing subsequent operations.
-The Arduino's microcontroller is responsible for holding all your compiled code and executing the commands you specify.
-The Arduino Software on the other hand is the board's IDE where one writes the set of instructions governing the board.
-The getting [started guide](https://www.arduino.cc/en/Guide) would be a good place to start learning about the Arduino ecosystem.
+[`Arduino`](https://www.arduino.cc/en/Guide/Introduction) is an open-source electronics platform based on easy-to-use hardware (`Arduino Board`) and software (`Arduino IDE`). One can tell the board what to do if one has the correct form of data and a set of instructions for processing the data and performing subsequent operations. The Arduino's microcontroller is responsible for holding all your compiled code and executing the commands you specify. The Arduino Software on the other hand is the board's IDE where one writes the set of instructions governing the board. The getting [started guide](https://www.arduino.cc/en/Guide) would be a good place to start learning about the Arduino ecosystem.
 
 Switching over to R, we couldn't have found better words to summarize what `R` is than with these words found in the book [Advanced R](https://adv-r.hadley.nz/introduction.html) by `Hadley Wickham`: Despite its sometimes frustrating quirks, R is, at its heart, an elegant and beautiful language, well tailored for data science 🤗.
 
-With all this said, a fine convergence can be struck between the two: `data`.
-Consider this very simple example.
-We want the Arduino board to turn an LED (Light Emitting Diode) ON once it receives a `1` and OFF once it receives a `0`.
-If one can get a way of sending some data (1 or 0) to the board's microcontroller, then, the set objective will be achieved sooner or later.
+With all this said, a fine convergence can be struck between the two: `data`. Consider this very simple example. We want the Arduino board to turn an LED (Light Emitting Diode) ON once it receives a `1` and OFF once it receives a `0`. If one can get a way of sending some data (1 or 0) to the board's microcontroller, then, the set objective will be achieved sooner or later.
 
 ### Setting up a serial connection between R and Arduino
 
-Serial communication is the communication protocol that will be used between R and the Arduino software similar to what is used in the Arduino serial monitor.
-This communication interface will facilitate the transmission of data between the two interfaces.
+Serial communication is the communication protocol that will be used between R and the Arduino software similar to what is used in the Arduino serial monitor. This communication interface will facilitate the transmission of data between the two interfaces.
 
 The serial package [@serial] will be used to set up this comunication interface.
 
@@ -61,9 +52,7 @@ listPorts()
 
 Create an Arduino object and set up the interface parameters.
 
-This is achieved using the `serial::serialConnection` function.
-The interface parameters are such that the baud rate (specifies the number of bits being transferred per second) is set to `9600`, which is the same value in the Arduino script.
-Also, we have specified that the transmission ends with a new line and that the transmission is complete if the end of line symbol is the `carriage return cr`.
+This is achieved using the `serial::serialConnection` function. The interface parameters are such that the baud rate (specifies the number of bits being transferred per second) is set to `9600`, which is the same value in the Arduino script. Also, we have specified that the transmission ends with a new line and that the transmission is complete if the end of line symbol is the `carriage return cr`.
 
 ```{r}
 arduino <-  serialConnection(name = "aRduino",
@@ -79,9 +68,7 @@ arduino <-  serialConnection(name = "aRduino",
                            )
 ```
 
-Now that the serial interface is in place, the next step is initialising the interface and keeping it open for later usage such as writing and reading data from it.
-Once `serial::isOpen` initialises the interface, the Arduino board blinks.
-This is because the board resets once a serial port is opened to allow the bootloader to receive a new sketch.
+Now that the serial interface is in place, the next step is initialising the interface and keeping it open for later usage such as writing and reading data from it. Once `serial::isOpen` initialises the interface, the Arduino board blinks. This is because the board resets once a serial port is opened to allow the bootloader to receive a new sketch.
 
 `serial::isOpen` tests whether the connection is open or not.
 
@@ -125,42 +112,42 @@ Sys.sleep(2)
 
 ### Driving the manipulator's servo motors
 
-The Arduino board itself is a programmable platform.
-You can tell your board what to do by sending a set of instructions to the microcontroller on the board.
-To do so you use the [Arduino programming language](https://www.arduino.cc/en/Reference/HomePage) and [the Arduino Software (IDE)](https://www.arduino.cc/en/Main/Software).
-Here are sample instructions that were uploaded to the microcontroller:
+The Arduino board itself is a programmable platform. You can tell your board what to do by sending a set of instructions to the microcontroller on the board. To do so you use the [Arduino programming language](https://www.arduino.cc/en/Reference/HomePage) and [the Arduino Software (IDE)](https://www.arduino.cc/en/Main/Software). Here are sample instructions that were uploaded to the microcontroller:
 
-    if(Serial.available()){ // checks data in serial
+``` {.cpp style="color: #70AD47"}
 
-      static int t=0;
+if(Serial.available()){ // checks data in serial
 
-        char mychar=Serial.read(); // reads serial data
+  static int t=0;
 
-        switch(mychar){      
+    char mychar=Serial.read(); // reads serial data
 
-          case '0'...'9':
+    switch(mychar){      
 
-            t=t*10 + mychar - '0’; // parse integers​
+      case '0'...'9':
 
-            break;
+        t=t*10 + mychar - '0’; // parse integers​
 
-          case 'A':
+        break;
 
-            {
+      case 'A':
 
-                servoA.write(t,50,1); // write value to motor
+        {
 
-                Serial.println(t); // print data to serial
+            servoA.write(t,50,1); // write value to motor
 
-            }
-
-            t=0;​
-
-            break;​
-
-            ...​
+            Serial.println(t); // print data to serial
 
         }
+
+        t=0;​
+
+        break;​
+
+        ...​
+
+    }
+```
 
 On a very high level, the microcontroller:
 
@@ -174,18 +161,13 @@ On a very high level, the microcontroller:
 
     -   Write motor angles (send an electrical signal) to each respective motor based on the motor's tag e.g `A`, `B` or `C`
 
-So how do the servo motors actually rotate?
-Servos are controlled using adjustable pulse widths on the signal line.
-This is achieved using a technique called `Pulse Width Modulation`.
-PWM is a modulation technique that generates variable-width pulses to represent the amplitude of an analog input signal.
+So how do the servo motors actually rotate? Servos are controlled using adjustable pulse widths on the signal line. This is achieved using a technique called `Pulse Width Modulation`. PWM is a modulation technique that generates variable-width pulses to represent the amplitude of an analog input signal.
 
-For a standard servo, sending a `1 ms 5V` pulse turns the motor to `0` degrees, and sending a `2 ms 5V` pulse turns the motor to `180` degrees, with pulse lengths in the middle scaling linearly.
-A `1.5 ms` pulse, for example, turns the motor to 90 degrees.
-Once a pulse has been sent, the servo turns to that position and stays there until another pulse instruction is received.
-However, if you want a servo to "hold" its position (resist being pushed on and try to maintain the exact position), you just resend the command once every 20 ms. The Arduino servo commands \`servo.write take care of all this for you.
-To better understand how servo control works, please see the timing diagram:
+For a standard servo, sending a `1 ms 5V` pulse turns the motor to `0` degrees, and sending a `2 ms 5V` pulse turns the motor to `180` degrees, with pulse lengths in the middle scaling linearly. A `1.5 ms` pulse, for example, turns the motor to 90 degrees. Once a pulse has been sent, the servo turns to that position and stays there until another pulse instruction is received. However, if you want a servo to "hold" its position (resist being pushed on and try to maintain the exact position), you just resend the command once every 20 ms. The Arduino servo commands e.g `servo.write` takes care of all this for you. To better understand how servo control works, please see the timing diagram:
 
 ![Servo motor timing diagram: Jeremy Blum - Exploring Arduino](images/servo_timing.PNG){width="500"}
+
+A great place to get started with Arduino and some hobby electronics projects would be @blum2013exploring.
 
 ### **Reading data sent from Arduino board**
 
@@ -201,8 +183,7 @@ data_frm_arduino
 
 ### Summary
 
-There we go!
-In this section, we leveraged Arduino's capability to be programmed via a serial interface to send and receive data from R to the Arduino board.
+There we go! In this section, we leveraged Arduino's capability to be programmed via a serial interface to send and receive data from R to the Arduino board.
 
 Please do feel free to reach out in case of any questions, feedback and suggestions.
 
