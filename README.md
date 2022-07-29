@@ -6,7 +6,7 @@ This repo contains code that we used to achieve robotic arm actuation using R, p
 
 <p align = "center">
     <figcaption>ME ARM Kit</figcaption>
-    <img src = https://user-images.githubusercontent.com/56159134/181568840-0a2529d5-c339-485b-bb3e-156b339c4fd3.jpg width = 80%>
+    <img src = https://user-images.githubusercontent.com/56159134/181568840-0a2529d5-c339-485b-bb3e-156b339c4fd3.jpg width = 50%>
 </p>
 
 
