@@ -4,7 +4,7 @@ Awesome! That's how R played a role at each step of our project. You can find ho
 
 The instructions on the microcontroller (described in chapter 4) that send electrical pulses to rotate our motors can be found in the file [robot_arm_control.ino](https://github.com/R-icntay/rstudio_conf22_R_in_robotics/blob/main/arduino_code/robot_arm_control.ino).
 
-And that's it! There goes a touch of R in robotics.
+And that's it! Hopefully, there goes a touch of R in robotics.
 
 Please do feel free to reach out in case of any questions, feedback and suggestions.
 
