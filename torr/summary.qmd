@@ -1,14 +1,19 @@
 # Summary
 
-Awesome!
-That's how R played a role at each step of our project.
-You can find how we combined the code chunks from these four chapters and the user defined functions we created along the way to make our manipulator move: [R](https://github.com/R-icntay/rstudio_conf22_R_in_robotics/tree/main/R)
+Awesome! That's how R played a role at each step of our project. You can find how we combined the code chunks from these four chapters and the user defined functions we created along the way to make our manipulator move: [R](https://github.com/R-icntay/rstudio_conf22_R_in_robotics/tree/main/R)
 
 The instructions on the microcontroller (described in chapter 4) that send electrical pulses to rotate our motors can be found in the file [robot_arm_control.ino](https://github.com/R-icntay/rstudio_conf22_R_in_robotics/blob/main/arduino_code/robot_arm_control.ino).
 
-And that's it!
-There goes a touch of R in robotics.
+And that's it! There goes a touch of R in robotics.
 
-Please do feel free to reach out in case of any questions, feedback and suggestions,
+Please do feel free to reach out in case of any questions, feedback and suggestions.
+
+::: callout-note
+You can find the project's repo at:
+
+<https://github.com/R-icntay/rstudio_conf22_R_in_robotics>
+:::
+
+Happy learning,
 
 [Eric](https://twitter.com/ericntay) and [Ian](https://twitter.com/Entity_4004).
